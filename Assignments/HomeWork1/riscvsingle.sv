@@ -116,6 +116,7 @@ module testbench();
     end
 endmodule
 
+// ____________________________________________________________________________________//
 module top(input  logic        clk, reset,
            output logic [31:0] WriteData, DataAdr,
            output logic        MemWrite);
@@ -129,6 +130,7 @@ module top(input  logic        clk, reset,
   dmem dmem(clk, MemWrite, DataAdr, WriteData, ReadData);
 endmodule
 
+// ____________________________________________________________________________________//
 module riscvsingle(input  logic        clk, reset,
                    output logic [31:0] PC,
                    input  logic [31:0] Instr,
@@ -137,7 +139,8 @@ module riscvsingle(input  logic        clk, reset,
                    input  logic [31:0] ReadData);
 
   logic       ALUSrc, RegWrite, Jump, Zero;
-  logic [1:0] ResultSrc, ImmSrc;
+  logic [1:0] ResultSrc,
+  logic [2:0] ImmSrc; // CHANGED
   logic [2:0] ALUControl;
 
   controller c(Instr[6:0], Instr[14:12], Instr[30], Zero,
@@ -151,6 +154,8 @@ module riscvsingle(input  logic        clk, reset,
               ALUResult, WriteData, ReadData);
 endmodule
 
+
+// ____________________________________________________________________________________//
 module controller(input  logic [6:0] op,
                   input  logic [2:0] funct3,
                   input  logic       funct7b5,
@@ -159,7 +164,7 @@ module controller(input  logic [6:0] op,
                   output logic       MemWrite,
                   output logic       PCSrc, ALUSrc,
                   output logic       RegWrite, Jump,
-                  output logic [1:0] ImmSrc,
+                  output logic [2:0] ImmSrc, // CHANGED 
                   output logic [2:0] ALUControl);
 
   logic [1:0] ALUOp;
@@ -172,15 +177,17 @@ module controller(input  logic [6:0] op,
   assign PCSrc = Branch & Zero | Jump;
 endmodule
 
+
+// ____________________________________________________________________________________//
 module maindec(input  logic [6:0] op,
                output logic [1:0] ResultSrc,
                output logic       MemWrite,
                output logic       Branch, ALUSrc,
                output logic       RegWrite, Jump,
-               output logic [1:0] ImmSrc,
+               output logic [2:0] ImmSrc, // change everywhere
                output logic [1:0] ALUOp);
 
-  logic [10:0] controls;
+  logic [11:0] controls; 
 
   assign {RegWrite, ImmSrc, ALUSrc, MemWrite,
           ResultSrc, Branch, ALUOp, Jump} = controls;
@@ -188,16 +195,18 @@ module maindec(input  logic [6:0] op,
   always_comb
     case(op)
     // RegWrite_ImmSrc_ALUSrc_MemWrite_ResultSrc_Branch_ALUOp_Jump
-      7'b0000011: controls = 11'b1_00_1_0_01_0_00_0; // lw
-      7'b0100011: controls = 11'b0_01_1_1_00_0_00_0; // sw
-      7'b0110011: controls = 11'b1_xx_0_0_00_0_10_0; // R-type
-      7'b1100011: controls = 11'b0_10_0_0_00_1_01_0; // beq
-      7'b0010011: controls = 11'b1_00_1_0_00_0_10_0; // I-type ALU
-      7'b1101111: controls = 11'b1_11_0_0_10_0_00_1; // jal
-      default:    controls = 11'bx_xx_x_x_xx_x_xx_x; // non-implemented instruction
+      7'b0000011: controls = 12'b1_000_1_0_01_0_00_0; // lw
+      7'b0100011: controls = 12'b0_001_1_1_00_0_00_0; // sw
+      7'b0110011: controls = 12'b1_xxx_0_0_00_0_10_0; // R-type
+      7'b1100011: controls = 12'b0_010_0_0_00_1_01_0; // beq
+      7'b0010011: controls = 12'b1_000_1_0_00_0_10_0; // I-type ALU
+      7'b1101111: controls = 12'b1_011_0_0_10_0_00_1; // jal
+      7'b0010111: controls = 12'b1_111_0_0_11_0_00_0; // Auipc 
+      default:    controls = 12'bx_xx_x_x_xx_x_xx_x; // non-implemented instruction
     endcase
 endmodule
 
+// ____________________________________________________________________________________//
 module aludec(input  logic       opb5,
               input  logic [2:0] funct3,
               input  logic       funct7b5,
@@ -224,11 +233,12 @@ module aludec(input  logic       opb5,
     endcase
 endmodule
 
+// ____________________________________________________________________________________//
 module datapath(input  logic        clk, reset,
                 input  logic [1:0]  ResultSrc,
                 input  logic        PCSrc, ALUSrc,
                 input  logic        RegWrite,
-                input  logic [1:0]  ImmSrc,
+                input  logic [2:0]  ImmSrc, // CHANGED
                 input  logic [2:0]  ALUControl,
                 output logic        Zero,
                 output logic [31:0] PC,
@@ -255,9 +265,11 @@ module datapath(input  logic        clk, reset,
   // ALU logic
   mux2 #(32)  srcbmux(WriteData, ImmExt, ALUSrc, SrcB);
   alu         alu(SrcA, SrcB, ALUControl, ALUResult, Zero);
-  mux3 #(32)  resultmux(ALUResult, ReadData, PCPlus4, ResultSrc, Result);
+  // mux3 #(32)  resultmux(ALUResult, ReadData, PCPlus4, ResultSrc, Result); // ORIGINAL CHANGED. 
+  mux4 #(32)  resultmux(ALUResult, ReadData, PCPlus4, PCTarget, ResultSrc, Result); // CHANGED. 
 endmodule
 
+// ____________________________________________________________________________________//
 module regfile(input  logic        clk,
                input  logic        we3,
                input  logic [ 4:0] a1, a2, a3,
@@ -278,6 +290,7 @@ module regfile(input  logic        clk,
   assign rd2 = (a2 != 0) ? rf[a2] : 0;
 endmodule
 
+// ____________________________________________________________________________________//
 module adder(input  [31:0] a, b,
              output [31:0] y);
 
@@ -285,23 +298,26 @@ module adder(input  [31:0] a, b,
 endmodule
 
 module extend(input  logic [31:7] instr,
-              input  logic [1:0]  immsrc,
+              input  logic [2:0]  immsrc, // CHANGED
               output logic [31:0] immext);
 
   always_comb
     case(immsrc)
                // I-type
-      2'b00:   immext = {{20{instr[31]}}, instr[31:20]};
+      3'b000:   immext = {{20{instr[31]}}, instr[31:20]};
                // S-type (stores)
-      2'b01:   immext = {{20{instr[31]}}, instr[31:25], instr[11:7]};
+      3'b001:   immext = {{20{instr[31]}}, instr[31:25], instr[11:7]};
                // B-type (branches)
-      2'b10:   immext = {{20{instr[31]}}, instr[7], instr[30:25], instr[11:8], 1'b0};
+      3'b010:   immext = {{20{instr[31]}}, instr[7], instr[30:25], instr[11:8], 1'b0};
                // J-type (jal)
-      2'b11:   immext = {{12{instr[31]}}, instr[19:12], instr[20], instr[30:21], 1'b0};
+      3'b011:   immext = {{12{instr[31]}}, instr[19:12], instr[20], instr[30:21], 1'b0};
+               // U-TYpe 
+      3'b11:    immext = { instr[31:12] , 12'b0 };
       default: immext = 32'bx; // undefined
     endcase
 endmodule
 
+// ____________________________________________________________________________________//
 module flopr #(parameter WIDTH = 8)
               (input  logic             clk, reset,
                input  logic [WIDTH-1:0] d,
@@ -320,6 +336,7 @@ module mux2 #(parameter WIDTH = 8)
   assign y = s ? d1 : d0;
 endmodule
 
+/*
 module mux3 #(parameter WIDTH = 8)
              (input  logic [WIDTH-1:0] d0, d1, d2,
               input  logic [1:0]       s,
@@ -327,7 +344,17 @@ module mux3 #(parameter WIDTH = 8)
 
   assign y = s[1] ? d2 : (s[0] ? d1 : d0);
 endmodule
+*/
 
+// Adding second option ResultSRC[1:0] == 11, 10, 01, or 00.
+modeule mux4 #(parameter WIDTH = 8) 
+              (input logic [WIDTH-1:0] d0, d1, d2, d3,
+               input logic [1:0]        s,
+               output logic [WIDTH-1:0] y);
+
+  assign y = s[1] ? (s[0] ? d3 : d2) : (s[0] ? d1 : d0);
+endmodule
+// ____________________________________________________________________________________//
 module imem(input  logic [31:0] a,
             output logic [31:0] rd);
 
@@ -351,6 +378,7 @@ module dmem(input  logic        clk, we,
     if (we) RAM[a[31:2]] <= wd;
 endmodule
 
+// ____________________________________________________________________________________//
 module alu(input  logic [31:0] a, b,
            input  logic [2:0]  alucontrol,
            output logic [31:0] result,
