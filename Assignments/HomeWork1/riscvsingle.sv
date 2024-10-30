@@ -139,7 +139,7 @@ module riscvsingle(input  logic        clk, reset,
                    input  logic [31:0] ReadData);
 
   logic       ALUSrc, RegWrite, Jump, Zero;
-  logic [1:0] ResultSrc,
+  logic [1:0] ResultSrc;
   logic [2:0] ImmSrc; // CHANGED
   logic [2:0] ALUControl;
 
@@ -347,7 +347,7 @@ endmodule
 */
 
 // Adding second option ResultSRC[1:0] == 11, 10, 01, or 00.
-modeule mux4 #(parameter WIDTH = 8) 
+module mux4 #(parameter WIDTH = 8) 
               (input logic [WIDTH-1:0] d0, d1, d2, d3,
                input logic [1:0]        s,
                output logic [WIDTH-1:0] y);
