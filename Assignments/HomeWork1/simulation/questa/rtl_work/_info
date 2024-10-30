@@ -1,0 +1,442 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/simulation/questa
+T_opt
+!s110 1730318143
+VS17WfEe_ie3DBgLOUdI[Q0
+04 9 4 work testbench fast 0
+=1-e41d2ddee9e0-67228f3e-eb371-de487
+R0
+!s12b OEM100
+!s124 OEM10U18 
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+R1
+vadder
+Z3 2/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv
+Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z5 !s110 1730321141
+!i10b 1
+!s100 0gEX27cB00oPz9ao7i@5e3
+InAJTS=4H9HNGMoiUcNfhh3
+S1
+R1
+Z6 w1730317449
+Z7 8/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv
+Z8 F/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv
+!i122 1
+L0 294 5
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2023.3;77
+r1
+!s85 0
+31
+Z11 !s108 1730321140.000000
+!s107 /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv|
+Z12 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1|/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv|
+!i113 0
+Z13 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z14 !s92 -sv -work work +incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+valu
+R3
+R4
+R5
+!i10b 1
+!s100 :HY98M0ER453^48`NH0X]3
+Ik49I=;:<oJjXeSln53UCO1
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 382 31
+R9
+R10
+r1
+!s85 0
+31
+R11
+Z15 !s107 /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv|
+R12
+!i113 0
+R13
+R14
+R2
+valudec
+R3
+R4
+R5
+!i10b 1
+!s100 _^_a6C>dfk_RAT?8i>dCe3
+IdVgP[`:4OmU:j_9k[;REA1
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 210 25
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vcontroller
+R3
+R4
+R5
+!i10b 1
+!s100 :DeADaV`=0iJ3@j^5kA8c3
+IMggP;f2XeM[V1kV@Ljc;90
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 159 20
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vdatapath
+R3
+R4
+R5
+!i10b 1
+!s100 fA1bN[2b9@JGIjNY[C6Y83
+IlCehDeU9W`XAo46e;S@2C3
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 237 34
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vdmem
+R3
+R4
+R5
+!i10b 1
+!s100 C9z9zY^[[W<9W:e=[PTmH3
+Ie`D2m9z5;iKk:^W^JUj@>1
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 369 11
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vextend
+R3
+R4
+R5
+!i10b 1
+!s100 n>cIUmoM`>5C0Do`3z0;C1
+IMAn1Fe4aPcCCAaZ3o]SXO2
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 300 19
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vflopr
+R3
+R4
+R5
+!i10b 1
+!s100 WjV;a;FW_LkC`JJb5kHSD2
+IQ;EHeH2?P6INJFU5B>6=b1
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 321 9
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vimem
+R3
+R4
+R5
+!i10b 1
+!s100 RW_V8ZA;VR<h=R6X_SP0O0
+IGFm_19f3@PC92MNTL6Pcn3
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 358 10
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vmaindec
+R3
+R4
+R5
+!i10b 1
+!s100 0giHAS@=V?_z=lI@NGde23
+IgZ[<ZobmXeQjOmSk1^N>=1
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 182 26
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vmux2
+R3
+R4
+R5
+!i10b 1
+!s100 8hYgPXFh=>G@7CD2M;cD90
+IKFfzfZK6MC^5lflLlA^`90
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 331 7
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vmux4
+R3
+R4
+R5
+!i10b 1
+!s100 OzCUoz1z06aX8j;7bVHoR0
+IUi?k:=?F5PNRS58ccN6m[1
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 350 7
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vregfile
+R3
+R4
+R5
+!i10b 1
+!s100 PA5OazJSYAn8LcmVX30>^3
+IecD:D_3>]3]mCULo4GkU@1
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 273 19
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vriscvsingle
+R3
+R4
+R5
+!i10b 1
+!s100 QO;:aeb14?7Pc?P]f2^Y63
+IgC]1=nDFWRLd2Q2V@8>1P3
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 134 22
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vtestbench
+R3
+R4
+R5
+!i10b 1
+!s100 =FUhNjXeHcL`dm[D_M^bU2
+I=nc0HXG5@9HadGM2>P>Tj2
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 81 37
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
+vtop
+R3
+R4
+R5
+!i10b 1
+!s100 T5ICLRT8:24^kV9?1UfW>3
+IUI68f[nGkUif]IfO^8Bkk0
+S1
+R1
+R6
+R7
+R8
+!i122 1
+L0 120 12
+R9
+R10
+r1
+!s85 0
+31
+R11
+R15
+R12
+!i113 0
+R13
+R14
+R2
