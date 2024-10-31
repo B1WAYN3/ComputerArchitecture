@@ -1,5 +1,5 @@
 Flow report for top
-Wed Oct 30 14:55:28 2024
+Thu Oct 31 12:25:04 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Wed Oct 30 14:55:28 2024          ;
+; Flow Status                        ; Successful - Thu Oct 31 12:25:04 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; top                                            ;
 ; Top-level Entity Name              ; top                                            ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/30/2024 14:55:08 ;
+; Start date & time ; 10/31/2024 12:24:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; top                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 250813974768096.173031810858108        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 140737522499200.173039548815125        ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; testbench                         ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -108,8 +108,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:21     ; 1.0                     ; 714 MB              ; 00:00:21                           ;
-; Total                  ; 00:00:21     ; --                      ; --                  ; 00:00:21                           ;
+; Analysis & Elaboration ; 00:00:17     ; 1.0                     ; 705 MB              ; 00:00:21                           ;
+; Total                  ; 00:00:17     ; --                      ; --                  ; 00:00:21                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,7 +118,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+---------------------------+-------------+-------------+----------------+
 ; Module Name            ; Machine Hostname          ; OS Name     ; OS Version  ; Processor type ;
 +------------------------+---------------------------+-------------+-------------+----------------+
-; Analysis & Elaboration ; iht32-1501.engr.wustl.edu ; Rocky Linux ; Rocky Linux ; x86_64         ;
+; Analysis & Elaboration ; iht32-1506.engr.wustl.edu ; Rocky Linux ; Rocky Linux ; x86_64         ;
 +------------------------+---------------------------+-------------+-------------+----------------+
 
 
