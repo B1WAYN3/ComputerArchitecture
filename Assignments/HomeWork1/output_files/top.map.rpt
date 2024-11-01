@@ -1,5 +1,5 @@
 Analysis & Elaboration report for top
-Thu Oct 31 12:25:04 2024
+Fri Nov  1 13:16:50 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                      ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Thu Oct 31 12:25:04 2024          ;
+; Analysis & Elaboration Status      ; Successful - Fri Nov  1 13:16:49 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; top                                            ;
 ; Top-level Entity Name              ; top                                            ;
@@ -231,7 +231,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Oct 31 12:24:47 2024
+    Info: Processing started: Fri Nov  1 13:16:28 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -264,7 +264,6 @@ Info (12128): Elaborating entity "adder" for hierarchy "riscvsingle:rvsingle|dat
 Info (12128): Elaborating entity "mux2" for hierarchy "riscvsingle:rvsingle|datapath:dp|mux2:pcmux" File: /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv Line: 258
 Info (12128): Elaborating entity "regfile" for hierarchy "riscvsingle:rvsingle|datapath:dp|regfile:rf" File: /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv Line: 262
 Info (12128): Elaborating entity "extend" for hierarchy "riscvsingle:rvsingle|datapath:dp|extend:ext" File: /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv Line: 263
-Warning (10272): Verilog HDL Case Statement warning at top.sv(315): case item expression covers a value already covered by a previous case item File: /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv Line: 315
 Info (12128): Elaborating entity "alu" for hierarchy "riscvsingle:rvsingle|datapath:dp|alu:alu" File: /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv Line: 267
 Info (12128): Elaborating entity "mux4" for hierarchy "riscvsingle:rvsingle|datapath:dp|mux4:resultmux" File: /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv Line: 269
 Info (12128): Elaborating entity "imem" for hierarchy "imem:imem" File: /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv Line: 129
@@ -274,10 +273,10 @@ Warning (10030): Net "RAM.waddr_a" at top.sv(361) has no driver or initial value
 Warning (10030): Net "RAM.we_a" at top.sv(361) has no driver or initial value, using a default initial value '0' File: /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv Line: 361
 Info (12128): Elaborating entity "dmem" for hierarchy "dmem:dmem" File: /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv Line: 130
 Info (144001): Generated suppressed messages file /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/output_files/top.map.smsg
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 705 megabytes
-    Info: Processing ended: Thu Oct 31 12:25:04 2024
-    Info: Elapsed time: 00:00:17
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 711 megabytes
+    Info: Processing ended: Fri Nov  1 13:16:50 2024
+    Info: Elapsed time: 00:00:22
     Info: Total CPU time (on all processors): 00:00:21
 
 
