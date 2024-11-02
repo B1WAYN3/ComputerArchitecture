@@ -25,7 +25,7 @@
 # 
 # vlog -sv -work work +incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1 {/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:17:03 on Nov 01,2024
+# Start time: 16:45:52 on Nov 01,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1" /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv 
 # -- Compiling module testbench
 # -- Compiling module top
@@ -46,12 +46,12 @@
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:17:03 on Nov 01,2024, Elapsed time: 0:00:00
+# End time: 16:45:52 on Nov 01,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1 {/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:17:03 on Nov 01,2024
+# Start time: 16:45:52 on Nov 01,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1" /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv 
 # -- Compiling module testbench
 # -- Compiling module top
@@ -72,12 +72,12 @@
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:17:03 on Nov 01,2024, Elapsed time: 0:00:00
+# End time: 16:45:52 on Nov 01,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  testbench
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 13:17:03 on Nov 01,2024
+# Start time: 16:45:52 on Nov 01,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -109,65 +109,3 @@
 # ** Note: $stop    : /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv(113)
 #    Time: 255 ps  Iteration: 1  Instance: /testbench
 # Break in Module testbench at /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv line 113
-add wave -position insertpoint  \
-sim:/testbench/dut/rvsingle/dp/pcreg/q
-add wave -position insertpoint  \
-sim:/testbench/dut/rvsingle/dp/rf/wd3
-add wave -position insertpoint sim:/testbench/dut/rvsingle/dp/resultmux/*
-add wave -position insertpoint  \
-sim:/testbench/dut/rvsingle/c/md/ImmSrc
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.testbench(fast)
-# Loading work.top(fast)
-# Loading work.riscvsingle(fast)
-# Loading work.controller(fast)
-# Loading work.maindec(fast)
-# Loading work.aludec(fast)
-# Loading work.datapath(fast)
-# Loading work.flopr(fast)
-# Loading work.adder(fast)
-# Loading work.mux2(fast)
-# Loading work.regfile(fast)
-# Loading work.extend(fast)
-# Loading work.alu(fast)
-# Loading work.mux4(fast)
-# Loading work.imem(fast)
-# Loading work.dmem(fast)
-run 1150
-# Simulation failed
-# ** Note: $stop    : /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv(113)
-#    Time: 255 ps  Iteration: 1  Instance: /testbench
-# Break in Module testbench at /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv line 113
-run 100
-add wave -position insertpoint  \
-sim:/testbench/dut/rvsingle/dp/PCTarget
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.testbench(fast)
-# Loading work.top(fast)
-# Loading work.riscvsingle(fast)
-# Loading work.controller(fast)
-# Loading work.maindec(fast)
-# Loading work.aludec(fast)
-# Loading work.datapath(fast)
-# Loading work.flopr(fast)
-# Loading work.adder(fast)
-# Loading work.mux2(fast)
-# Loading work.regfile(fast)
-# Loading work.extend(fast)
-# Loading work.alu(fast)
-# Loading work.mux4(fast)
-# Loading work.imem(fast)
-# Loading work.dmem(fast)
-run 1150
-# Simulation failed
-# ** Note: $stop    : /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv(113)
-#    Time: 255 ps  Iteration: 1  Instance: /testbench
-# Break in Module testbench at /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv line 113
-# End time: 14:03:16 on Nov 01,2024, Elapsed time: 0:46:13
-# Errors: 0, Warnings: 1
