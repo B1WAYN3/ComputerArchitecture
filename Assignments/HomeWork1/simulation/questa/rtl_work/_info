@@ -12,27 +12,27 @@ Z0 !s99 nomlopt
 cModel Technology
 Z1 d/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/simulation/questa
 T_opt
-Z2 !s110 1730665400
-VE@6A`ok9H_b@iAz:fh]4l1
+!s110 1730669121
+V4?[6@cgDkFFk^Emk8Y1=]2
 04 9 4 work testbench fast 0
-=1-1cb72c1b6594-6727dbb8-4a268-bc589
+=1-1cb72c1b6594-6727ea40-c5327-c0da3
 R0
 !s12b OEM100
 !s124 OEM10U18 
 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
-Z3 tCvgOpt 0
+Z2 tCvgOpt 0
 n@_opt
 OL;O;2023.3;77
 vadder
-Z4 2/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv
-Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-R2
+Z3 2/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv
+Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z5 !s110 1730669120
 !i10b 1
 !s100 Iln7N6Y_KSjUXUjZoIg0C1
 Iae1G2T=9_`JMk;FOZz]E=2
 S1
 R1
-Z6 w1730665218
+Z6 w1730669098
 Z7 8/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv
 Z8 F/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv
 !i122 1
@@ -42,17 +42,17 @@ Z10 OL;L;2023.3;77
 r1
 !s85 0
 31
-Z11 !s108 1730665399.000000
+Z11 !s108 1730669120.000000
 Z12 !s107 /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv|
 Z13 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1|/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv|
 !i113 0
 Z14 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Z15 !s92 -sv -work work +incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R3
+R2
 valu
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 >GLLbk=C?CUU11FH;01Z@0
 I7;hO3b]Bi8JOZ1bdZKgGb1
@@ -74,11 +74,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 valudec
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 Jjd9gl3E<79X5<<NO`C1?3
 I`2dO1h?Dih5olDl=QJCmh2
@@ -100,11 +100,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vcontroller
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 :ZdIaSbBbF5`@YnlY=8NT2
 I4;`:;SEYg]gR=lh;^PeSN0
@@ -126,11 +126,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vdatapath
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 _h`OXCnVX0Ua[XjJUIdbF1
 IC4Rg5MDgcA?U9aRK70_gl1
@@ -152,11 +152,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vdmem
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 iOWSjHEce5Fz^ilI@8Vnd0
 IUGFzbg4Km0j8i<9a2YSUV1
@@ -178,11 +178,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vextend
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 z2j>^OOjP:UL_2]?dKWYB2
 IAQ3cIa`X^mSl4M1OEo6LD1
@@ -204,11 +204,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vflopr
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 XM^9a6:Edz?;nC>f<[NBT2
 Io]bmnhLa;?GGX57Y^XeIc0
@@ -230,11 +230,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vimem
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 gzniLc0f5d]>hOo9RdiSA2
 I[YV3P5eH5ead=On3zI`^h2
@@ -256,11 +256,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vmaindec
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 O?l<kNV?4SPUJRO3R4cz<0
 ISSI9OQVIfS6KeC8NDBbQ;1
@@ -282,11 +282,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vmux2
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 Bh2GGGJeLk6]=<QE>G>3K1
 I??o8NKmJg[i2OfImI>E_<0
@@ -308,11 +308,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vmux4
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 JmBRCeOZ;`8VGIzVQZ5_d3
 IM74bRSizY6Foc1Pcn?HCe2
@@ -334,11 +334,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vregfile
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 MbJRfXC_GN]VC[`O:Qo4M3
 I5gDcU?FR_IJbaLmHh9V;93
@@ -360,11 +360,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vriscvsingle
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 n2B7l[<iOnbaQJ5H9M@kz1
 IYJKLFBAjzR_P6mBBBBI>11
@@ -386,11 +386,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vtestbench
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 N[A6<VEj[NT65`mLRled>0
 Iz164M=V>:_FeioQVE8c640
@@ -412,11 +412,11 @@ R13
 !i113 0
 R14
 R15
-R3
+R2
 vtop
+R3
 R4
 R5
-R2
 !i10b 1
 !s100 LcZN[C2jF?KmLMMoYV]IM1
 ILPTzeNKS8T=PIjYiKk=7I3
@@ -438,4 +438,4 @@ R13
 !i113 0
 R14
 R15
-R3
+R2

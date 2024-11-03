@@ -22,12 +22,10 @@
 # vmap work rtl_work 
 # Copying /project/engineering/intelFPGA/23.1std/questa_fse/linux_x86_64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: (vmap-31) Unable to unlink file "./modelsim.ini_lock".
-# Device or resource busy. (errno = EBUSY)
 # 
 # vlog -sv -work work +incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1 {/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:23:19 on Nov 03,2024
+# Start time: 15:25:20 on Nov 03,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1" /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv 
 # -- Compiling module testbench
 # -- Compiling module top
@@ -48,12 +46,12 @@
 # 
 # Top level modules:
 # 	testbench
-# End time: 14:23:19 on Nov 03,2024, Elapsed time: 0:00:00
+# End time: 15:25:20 on Nov 03,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1 {/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:23:19 on Nov 03,2024
+# Start time: 15:25:20 on Nov 03,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1" /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv 
 # -- Compiling module testbench
 # -- Compiling module top
@@ -74,12 +72,12 @@
 # 
 # Top level modules:
 # 	testbench
-# End time: 14:23:20 on Nov 03,2024, Elapsed time: 0:00:01
+# End time: 15:25:20 on Nov 03,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  testbench
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 14:23:20 on Nov 03,2024
+# Start time: 15:25:20 on Nov 03,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -107,16 +105,30 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Simulation failed
-# ** Note: $stop    : /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv(127)
-#    Time: 255 ps  Iteration: 1  Instance: /testbench
-# Break in Module testbench at /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv line 127
+# Simulation succeeded
+# ** Note: $stop    : /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv(124)
+#    Time: 265 ps  Iteration: 1  Instance: /testbench
+# Break in Module testbench at /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv line 124
 add wave -position insertpoint  \
 sim:/testbench/dut/rvsingle/PC
 add wave -position insertpoint  \
 sim:/testbench/dut/rvsingle/Instr
 add wave -position insertpoint  \
 sim:/testbench/dut/rvsingle/ALUResult
+add wave -position insertpoint  \
+sim:/testbench/dut/rvsingle/ALUSrc
+add wave -position insertpoint  \
+sim:/testbench/dut/rvsingle/dp/PCTarget
+add wave -position insertpoint  \
+sim:/testbench/dut/rvsingle/dp/ImmExt
+add wave -position insertpoint  \
+sim:/testbench/dut/rvsingle/dp/pcreg/q
+add wave -position insertpoint  \
+sim:/testbench/dut/rvsingle/dp/rf/wd3
+add wave -position insertpoint  \
+sim:/testbench/dut/rvsingle/dp/rf/rd1
+add wave -position insertpoint  \
+sim:/testbench/dut/rvsingle/dp/rf/rd2
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt
@@ -138,3 +150,4 @@ restart
 # Loading work.imem(fast)
 # Loading work.dmem(fast)
 run
+run 100
