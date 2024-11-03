@@ -209,3 +209,5 @@ run 1500
 # ** Note: $stop    : /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv(124)
 #    Time: 265 ps  Iteration: 1  Instance: /testbench
 # Break in Module testbench at /home/warehouse/e.sarceno/FALL2024/632M/Homework3/ComputerArchitecture/Assignments/HomeWork1/top.sv line 124
+# End time: 16:12:52 on Nov 03,2024, Elapsed time: 0:47:32
+# Errors: 0, Warnings: 1

@@ -24,6 +24,7 @@
 //    addi, andi, ori, slti
 //    beq
 //    jal
+//    auipc
 // Exceptions, traps, and interrupts not implemented
 // little-endian memory
 
