@@ -1,5 +1,5 @@
 Flow report for top
-Sat Nov  2 17:29:29 2024
+Sun Nov  3 14:23:05 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Sat Nov  2 17:29:29 2024          ;
+; Flow Status                        ; Successful - Sun Nov  3 14:23:05 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; top                                            ;
 ; Top-level Entity Name              ; top                                            ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/02/2024 17:29:11 ;
+; Start date & time ; 11/03/2024 14:22:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; top                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 31573044587742.173058655140158         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 31573044585876.173066536750295         ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; testbench                         ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -118,7 +118,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+---------------------------+-------------+-------------+----------------+
 ; Module Name            ; Machine Hostname          ; OS Name     ; OS Version  ; Processor type ;
 +------------------------+---------------------------+-------------+-------------+----------------+
-; Analysis & Elaboration ; iht32-1508.engr.wustl.edu ; Rocky Linux ; Rocky Linux ; x86_64         ;
+; Analysis & Elaboration ; iht32-1505.engr.wustl.edu ; Rocky Linux ; Rocky Linux ; x86_64         ;
 +------------------------+---------------------------+-------------+-------------+----------------+
 
 

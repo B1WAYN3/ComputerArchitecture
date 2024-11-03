@@ -2,9 +2,15 @@
 
 // RISC-V single-cycle processor
 // From Section 7.6 of Digital Design & Computer Architecture
+
+// Previous Editor: 
 // 27 April 2020
 // David_Harris@hmc.edu
 // Sarah.Harris@unlv.edu
+
+// New Editor: 
+// 03 Nov 2024
+// e.sarceno@wustl.edu 
 
 // run 210
 // Expect simulator to print "Simulation succeeded"
@@ -62,6 +68,13 @@
 //   Instr[31:12] = imm[20], imm[10:1], imm[11], imm[19:12]
 //   Instr[11:7]  = rd
 //   Instr[6:0]   = opcode
+// U-Type Instruction
+//   auipc, lui (used for address calculation and loading upper immediate)
+//   INSTR rd, imm (imm[31:12] is a 20-bit immediate value)
+//   Instr[31:12] = imm[31:12] (20-bit upper immediate)
+//   Instr[11:7]  = rd
+//   Instr[6:0]   = opcode
+
 
 //   Instruction  opcode    funct3    funct7
 //   add          0110011   000       0000000
@@ -77,6 +90,7 @@
 //   lw	          0000011   010       immediate
 //   sw           0100011   010       immediate
 //   jal          1101111   immediate immediate
+//   auipc        0010111   N/A       immediate
 
 module testbench();
 
@@ -194,7 +208,7 @@ module maindec(input  logic [6:0] op,
 
   always_comb
     case(op)
-    // RegWrite_ImmSrc_ALUSrc_MemWrite_ResultSrc_Branch_ALUOp_Jump
+      // RegWrite_ImmSrc_ALUSrc_MemWrite_ResultSrc_Branch_ALUOp_Jump
       7'b0000011: controls = 12'b1_000_1_0_01_0_00_0; // lw
       7'b0100011: controls = 12'b0_001_1_1_00_0_00_0; // sw
       7'b0110011: controls = 12'b1_xxx_0_0_00_0_10_0; // R-type
