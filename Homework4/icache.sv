@@ -84,7 +84,7 @@ module icache(input  logic        clk, reset,
     localparam TAG_BITS    = 25;      // Remaining bits for tag (32 - INDEX_BITS - 2)
     
     // Cache storage
-    logic [NUM_BLOCKS-1:0]                 valid_array;
+    logic                                  valid_array [0:NUM_BLOCKS-1];
     logic [TAG_BITS-1:0]                   tag_array [0:NUM_BLOCKS-1];
     logic [31:0]                           data_array [0:NUM_BLOCKS-1];
     
@@ -103,7 +103,9 @@ module icache(input  logic        clk, reset,
     // Sequential logic for cache operation
     always_ff @(posedge clk or posedge reset) begin
         if (reset) begin
-            valid_array <= '0;
+		      for(int i = 0; i < 32; i++) begin 
+					valid_array[i] <= 1'b0;
+				end 
             RDY <= 1'b0;
             MRead <= 1'b0;
             RD <= 32'b0;
@@ -120,7 +122,8 @@ module icache(input  logic        clk, reset,
                     MRead <= 1'b1;
                     RDY <= 1'b0;
                 end
-            end else if (MRead && MRdy) begin
+            end 
+				if (MRead && MRdy) begin
                 // Data from main memory is ready
                 // Update cache and provide data to processor
                 valid_array[index] <= 1'b1;
@@ -129,10 +132,7 @@ module icache(input  logic        clk, reset,
                 RD <= MData;
                 RDY <= 1'b1;
                 MRead <= 1'b0; // Reset memory read signal
-            end else begin
-                // No read enable and no memory operation
-                RDY <= 1'b0;
-            end
+            end 
         end
     end
 
