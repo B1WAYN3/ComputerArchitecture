@@ -76,87 +76,63 @@ module icache(input  logic        clk, reset,
               output logic        MRead,
               input  logic        MRdy);
 
-  // FSM states
-    typedef enum logic [1:0] {
-        IDLE      = 2'b00,
-        MEM_READ  = 2'b01
-    } state_t;
-
+// Cache parameters
+    localparam CACHE_SIZE  = 128;     // Total cache size in bytes
+    localparam BLOCK_SIZE  = 4;       // Block size in bytes (1 word)
+    localparam NUM_BLOCKS  = CACHE_SIZE / BLOCK_SIZE; // 32 cache lines
+    localparam INDEX_BITS  = 5;       // Number of index bits (log2(NUM_BLOCKS))
+    localparam TAG_BITS    = 25;      // Remaining bits for tag (32 - INDEX_BITS - 2)
+    
+    // Cache storage
+    logic [NUM_BLOCKS-1:0]                 valid_array;
+    logic [TAG_BITS-1:0]                   tag_array [0:NUM_BLOCKS-1];
+    logic [31:0]                           data_array [0:NUM_BLOCKS-1];
+    
+    // Internal signals
+    logic [TAG_BITS-1:0]                   tag_in;
+    logic [INDEX_BITS-1:0]                 index;
+    logic                                  hit;
+    
     // Extract index and tag from address
-    assign index = A[INDEX_BITS+1:2];               // Bits [6:2] for 32 blocks
-    assign tag_in = A[31:INDEX_BITS+2];             // Remaining upper bits as tag
-
-    // Check for cache hit
-    assign hit = valid[index] && (tag_array[index] == tag_in);
-
-    // Combinational logic for next state and control signals
-    always_comb begin
-        // Default values
-        next_state = state;
-        MRead = 1'b0;
-        MAddr = 32'b0;
-
-        case (state)
-            IDLE: begin
-                if (RE) begin
-                    if (hit) begin
-                        next_state = IDLE;
-                    end else begin
-                        MAddr = A;
-                        MRead = 1'b1;
-                        next_state = MEM_READ;
-                    end
-                end
-            end
-            MEM_READ: begin
-                MAddr = A;
-                MRead = 1'b1;
-                if (MRdy) begin
-                    next_state = IDLE;
-                end
-            end
-            default: next_state = IDLE;
-        endcase
-    end
-
-    // Sequential logic for state updates and outputs
+    assign index = A[6:2];                 // Bits [6:2]
+    assign tag_in = A[31:7];               // Bits [31:7]
+    
+    // Cache hit logic
+    assign hit = valid_array[index] && (tag_array[index] == tag_in);
+    
+    // Sequential logic for cache operation
     always_ff @(posedge clk or posedge reset) begin
         if (reset) begin
-            state <= IDLE;
-            valid <= '0;
+            valid_array <= '0;
             RDY <= 1'b0;
+            MRead <= 1'b0;
             RD <= 32'b0;
         end else begin
-            state <= next_state;
-            case (state)
-                IDLE: begin
-                    if (RE) begin
-                        if (hit) begin
-                            RD <= data_array[index];
-                            RDY <= 1'b1;
-                        end else begin
-                            RDY <= 1'b0;
-                        end
-                    end else begin
-                        RDY <= 1'b0;
-                    end
-                end
-                MEM_READ: begin
-                    if (MRdy) begin
-                        // Update cache with new data
-                        data_array[index] <= MData;
-                        tag_array[index] <= tag_in;
-                        valid[index] <= 1'b1;
-                        RD <= MData;
-                        RDY <= 1'b1;
-                    end else begin
-                        RDY <= 1'b0;
-                    end
-                end
-                default: begin
+            if (RE) begin
+                if (hit) begin
+                    // Cache hit: provide data immediately
+                    RD <= data_array[index];
+                    RDY <= 1'b1;
+                    MRead <= 1'b0;
+                end else begin
+                    // Cache miss: initiate memory read
+                    MAddr <= A;
+                    MRead <= 1'b1;
                     RDY <= 1'b0;
                 end
-            endcase
+            end else if (MRead && MRdy) begin
+                // Data from main memory is ready
+                // Update cache and provide data to processor
+                valid_array[index] <= 1'b1;
+                tag_array[index] <= tag_in;
+                data_array[index] <= MData;
+                RD <= MData;
+                RDY <= 1'b1;
+                MRead <= 1'b0; // Reset memory read signal
+            end else begin
+                // No read enable and no memory operation
+                RDY <= 1'b0;
+            end
         end
     end
 
