@@ -76,7 +76,89 @@ module icache(input  logic        clk, reset,
               output logic        MRead,
               input  logic        MRdy);
 
-  // INSERT YOUR DESIGN FOR ICACHE HERE
+  // FSM states
+    typedef enum logic [1:0] {
+        IDLE      = 2'b00,
+        MEM_READ  = 2'b01
+    } state_t;
+
+    // Extract index and tag from address
+    assign index = A[INDEX_BITS+1:2];               // Bits [6:2] for 32 blocks
+    assign tag_in = A[31:INDEX_BITS+2];             // Remaining upper bits as tag
+
+    // Check for cache hit
+    assign hit = valid[index] && (tag_array[index] == tag_in);
+
+    // Combinational logic for next state and control signals
+    always_comb begin
+        // Default values
+        next_state = state;
+        MRead = 1'b0;
+        MAddr = 32'b0;
+
+        case (state)
+            IDLE: begin
+                if (RE) begin
+                    if (hit) begin
+                        next_state = IDLE;
+                    end else begin
+                        MAddr = A;
+                        MRead = 1'b1;
+                        next_state = MEM_READ;
+                    end
+                end
+            end
+            MEM_READ: begin
+                MAddr = A;
+                MRead = 1'b1;
+                if (MRdy) begin
+                    next_state = IDLE;
+                end
+            end
+            default: next_state = IDLE;
+        endcase
+    end
+
+    // Sequential logic for state updates and outputs
+    always_ff @(posedge clk or posedge reset) begin
+        if (reset) begin
+            state <= IDLE;
+            valid <= '0;
+            RDY <= 1'b0;
+            RD <= 32'b0;
+        end else begin
+            state <= next_state;
+            case (state)
+                IDLE: begin
+                    if (RE) begin
+                        if (hit) begin
+                            RD <= data_array[index];
+                            RDY <= 1'b1;
+                        end else begin
+                            RDY <= 1'b0;
+                        end
+                    end else begin
+                        RDY <= 1'b0;
+                    end
+                end
+                MEM_READ: begin
+                    if (MRdy) begin
+                        // Update cache with new data
+                        data_array[index] <= MData;
+                        tag_array[index] <= tag_in;
+                        valid[index] <= 1'b1;
+                        RD <= MData;
+                        RDY <= 1'b1;
+                    end else begin
+                        RDY <= 1'b0;
+                    end
+                end
+                default: begin
+                    RDY <= 1'b0;
+                end
+            endcase
+        end
+    end
 
 endmodule
 
